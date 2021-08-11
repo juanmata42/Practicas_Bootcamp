@@ -114,7 +114,7 @@ function pasapalabra()
 
         { letter: "k", answer: "katana", status: 0, question: "CON LA K. Espada japonesa portada por los samurais."},
 
-        { letter: "l", answer: "licantropo", status: 0, question: "CON LA L. Duende de la mitología irlandesa que espera al final del arcoiris."},
+        { letter: "l", answer: "leprechaun", status: 0, question: "CON LA L. Duende de la mitología irlandesa que espera al final del arcoiris."},
 
         { letter: "m", answer: "mascaron", status: 0, question: "CON LA M. Figura decorativa tallada en madera situada en la proa de antiguos buques."},
 

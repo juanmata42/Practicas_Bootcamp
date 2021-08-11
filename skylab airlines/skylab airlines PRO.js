@@ -29,6 +29,7 @@ let flights = [
 function userwelcome()
 {
     let user=prompt("Hola. ¿Quién te toca ser hoy?");
+    if (user===""){user="Anónima"}
     alert(`Bienvenida sea la persona ${user}, \nse le desea fortuna en sus futuros viajes.\n(Que se muestran en la consola)`)
     return user;
 };

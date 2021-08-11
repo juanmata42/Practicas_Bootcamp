@@ -16,9 +16,9 @@ function tresDeci(num)
 
 //operators array
 let operadoresposibles=["+","-","/","*","raiz"]
-let numero1
-let numero2
-let operador
+let numero1=0
+let numero2=0
+let operador=""
 
 //function for if the user is not very bright
 function nolisto()
@@ -30,54 +30,54 @@ function nolisto()
 
 function firstnum()
 {
-let numero1 = parseFloat(prompt('Primer número'));
-if (Number.isNaN(numero1))
-{
-nolisto()
-firstnum()
-}
-else
-{
-	//Displaying info
-alert("El primer numero es "+numero1);
-return numero1;
-}
+	numero1 = parseFloat(prompt('Primer número'));
+	if (Number.isNaN(numero1))
+	{
+		nolisto()
+		firstnum()
+	}
+	else
+	{
+			//Displaying info
+		alert("El primer numero es "+numero1);		
+	}
+	return numero1;
 }
 
 
 //asking for operator and displaying
 function operadorcheck()
 {
-	let operador=prompt("Escoge un operador de los siguientes: +, - , * , / , raiz. \nSi escoges raiz, el segundo numero será su índice.");
+	operador=prompt("Escoge un operador de los siguientes: +, - , * , / , raiz. \nSi escoges raiz, el segundo numero será su índice.");
 
-if (operadoresposibles.includes(operador))
-{
-alert("El operador escogido es "+operador);
-return operador
-}
-else
-{
-	nolisto();
-	operadorcheck();
-}
+	if (operadoresposibles.includes(operador))
+	{
+		alert("El operador escogido es "+operador);
+	}
+	else
+	{
+		alert("No es un comando válido. Por favor, vuelve a intentarlo.");
+		operadorcheck();
+	}
+	return operador
 }
 
 //asking for the second and displaying
 function secondnum()
 {
-let  numero2 = parseFloat(prompt('Segundo numero'));
+	numero2 = parseFloat(prompt('Segundo numero'));
 
-if (Number.isNaN(numero2))
-{
-nolisto()
-secondnum()
-}
-else
-{
-	//Displaying info
-alert("El segundo numero es "+numero2);
-return numero2;
-}
+	if (Number.isNaN(numero2))
+	{
+		nolisto()
+		secondnum()
+	}
+	else
+	{
+		//Displaying info
+		alert("El segundo numero es "+numero2);		
+	}
+	return numero2;
 }
 
 //the operations
@@ -120,13 +120,14 @@ function otravez()
 function calculadorapro()
 {
 	//Instructions
-alert("Instrucciones: \n1-Introduce un numero\n2-Escoge un operador de los siguientes: +, - , * , / , raiz. Si escoges raiz, el segundo numero será su índice.\n3-Introduce otro numero\nTe devuelvo un resultado.");
-	let numero1=firstnum()
-	let operador=operadorcheck()
-	let numero2=secondnum()
+	alert("Instrucciones: \n1-Introduce un numero\n2-Escoge un operador de los siguientes: +, - , * , / , raiz. Si escoges raiz, el segundo numero será su índice.\n3-Introduce otro numero\nTe devuelvo un resultado.");
+	numero1=firstnum()
+	operador=operadorcheck()
+	numero2=secondnum()
 
 	switch(operador)
 	
+
 	{
 		case "+":
 		alert(`${numero1} \+ ${numero2} \= ${suma(numero1,numero2)}`);
@@ -151,8 +152,7 @@ alert("Instrucciones: \n1-Introduce un numero\n2-Escoge un operador de los sigui
 		case "raiz":
 		alert(`Raiz ${numero2} de ${numero1} \= ${raiz(numero1,numero2)}`);
 		console.log((`Raiz ${numero2} de ${numero1} \= ${raiz(numero1,numero2)}`));
-		break;
-		
+		break;	
 	}
 	otravez()
 }

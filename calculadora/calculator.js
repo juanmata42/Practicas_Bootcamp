@@ -23,50 +23,48 @@ function nolisto()
 
 //first messages
 alert("Instrucciones: \n1-Introduce solo un número para hallar su raiz cuadrada.\n2-Introduce un segundo número para realizar las operaciones básicas +-x/")
-var  numero1 = parseFloat(prompt('Primer número'));
+let  numero1 = parseFloat(prompt('Primer número'));
 
 //We check if the first number is an int
 if (!Number.isNaN(numero1))
 {
 
-//Displaying info
-alert("El primer numero es "+numero1);
+	//Displaying info
+	alert("El primer numero es "+numero1);
 
-//asking for the second
-var numero2=prompt('Segundo número (opcional)');
+	//asking for the second
+	let numero2=prompt('Segundo número (opcional)');
 
-//check if the second is left empty to get the sqrt of the first
-if (numero2==="")
-{
-	alert(`La raiz cuadrada de ${numero1} es: ${(numero1**0.5)}.`);
-	var arrRes=[(numero1**0.5),"no te fias de mi, eh?"];
-}
+		//check if the second is left empty to get the sqrt of the first
+		if (numero2==="")
+		{
+			alert(`La raiz cuadrada de ${numero1} es: ${(numero1**0.5)}.`);
+			let arrRes=[(numero1**0.5),"no te fias de mi, eh?"];
+			console.log(arrRes);
+		}
 
-//if not let empty, turn it into a float
-else
-{
-	numero2=parseFloat(numero2)
+		//if not let empty, turn it into a float
+		else
+		{
+			numero2=parseFloat(numero2)
 
-//if its a number alright
-if ((numero2) && !Number.isNaN(numero2))
-{
-	var arrRes=[tresDeci((numero1+numero2)),tresDeci((numero1-numero2)),tresDeci((numero1*numero2)),tresDeci((numero1/numero2)),"Mirando la consola, asi que no te fias de mi, eh?"];
-	alert("El segundo segundo es "+numero2);
-	alert(`${numero1} \+ ${numero2} \= ${arrRes[0]}\n
-${numero1} \- ${numero2} \= ${arrRes[1]}\n
-${numero1} \* ${numero2} \= ${arrRes[2]}\n
-${numero1} \/ ${numero2} \= ${arrRes[3]}\n`);
-}
+			//if its a number alright
+			if ((numero2) && !Number.isNaN(numero2))
+			{
+				let arrRes=[tresDeci((numero1+numero2)),tresDeci((numero1-numero2)),tresDeci((numero1*numero2)),tresDeci((numero1/numero2)),"Mirando la consola, asi que no te fias de mi, eh?"];
+				alert("El segundo segundo es "+numero2);
+				alert(`${numero1} \+ ${numero2} \= ${arrRes[0]}\n${numero1} \- ${numero2} \= ${arrRes[1]}\n${numero1} \* ${numero2} \= ${arrRes[2]}\n${numero1} \/ ${numero2} \= ${arrRes[3]}`);
+				console.log(arrRes);
+			}
 
 
-//if second question is filled but its not an int
-else
-{
-	nolisto()
-}
-}
-alert("Los resultados se han almacenaco en un array. Consulta la consola para comprobarlo.");
-console.log(arrRes);
+			//if second question is filled but its not an int
+			else
+			{
+				nolisto()
+			}
+		}
+		alert("Los resultados se han almacenaco en un array. Consulta la consola para comprobarlo.");;
 }
 
 //if the first its not an number
