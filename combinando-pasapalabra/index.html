@@ -1,89 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>ASAPALABRA</title>
-      <link rel="icon" href="p_logo.png" type="image/icon type" />
-      <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>ASAPALABRA</title>
+    <link rel="icon" href="p_logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div id="puntuaciones">
-      <div>Mejores Puntuaciones</div><br>
-      <div id="0"></div>
-      <div id="1"></div>
-      <div id="2"></div>
-      <div id="3"></div>
-      <div id="4"></div>
-      <div id="5"></div>
-      <button type="button" id="vicio" onclick="location.reload()">Jugar de nuevo</button>
-</div>
-<div class="container">
-      <div class="letters" style="--m: 27; --tan: 0.41">
-        <div class="letterContainer" id="containerA" style="--i: 21">A</div>
-        <div class="letterContainer" id="containerB" style="--i: 22">B</div>
-        <div class="letterContainer" id="containerC" style="--i: 23">C</div>
-        <div class="letterContainer" id="containerD" style="--i: 24">D</div>
-        <div class="letterContainer" id="containerE" style="--i: 25">E</div>
-        <div class="letterContainer" id="containerF" style="--i: 26">F</div>
-        <div class="letterContainer" id="containerG" style="--i: 27">G</div>
-        <div class="letterContainer" id="containerH" style="--i: 1">H</div>
-        <div class="letterContainer" id="containerI" style="--i: 2">I</div>
-        <div class="letterContainer" id="containerJ" style="--i: 3">J</div>
-        <div class="letterContainer" id="containerK" style="--i: 4">K</div>
-        <div class="letterContainer" id="containerL" style="--i: 5">L</div>
-        <div class="letterContainer" id="containerM" style="--i: 6">M</div>
-        <div class="letterContainer" id="containerN" style="--i: 7">N</div>
-        <div class="letterContainer" id="containerÑ" style="--i: 8">Ñ</div>
-        <div class="letterContainer" id="containerO" style="--i: 9">O</div>
-        <div class="letterContainer" id="containerP" style="--i: 10">P</div>
-        <div class="letterContainer" id="containerQ" style="--i: 11">Q</div>
-        <div class="letterContainer" id="containerR" style="--i: 12">R</div>
-        <div class="letterContainer" id="containerS" style="--i: 13">S</div>
-        <div class="letterContainer" id="containerT" style="--i: 14">T</div>
-        <div class="letterContainer" id="containerU" style="--i: 15">U</div>
-        <div class="letterContainer" id="containerV" style="--i: 16">V</div>
-        <div class="letterContainer" id="containerW" style="--i: 17">W</div>
-        <div class="letterContainer" id="containerX" style="--i: 18">X</div>
-        <div class="letterContainer" id="containerY" style="--i: 19">Y</div>
-        <div class="letterContainer" id="containerZ" style="--i: 20">Z</div>
-      </div>
-</div>
- <!-- profe si te lees esto guiñame un ojo!-->
-<div id="container">
-   <video autoplay="true" id="videoElement"></video>
-</div>
-<div id="ventanaEntrada">
-<form id="inicio" onsubmit="userNameCatcher()">
-<h1 id="bienvenido">¡EL ROSCO!<br>Es tu momento<br>¿Podrás resolverlo?</h1><br>
- <label for="userNombre">¿Cómo te llamas Concursante?:</label><br>
-  <input type="text" id="userNombre" name="userNombre"><br>
-  <button id="comencemos" type="button" onclick="userNameCatcher()">Comencemos</button>
-</form>
-</div>
-<div id="preguntando">
-      <form id="preguntandoForm" onsubmit="answering()">
+    <div id="puntuaciones">
+        <div>Mejores Puntuaciones</div><br>
+        <div id="0"></div>
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <button type="button" id="vicio" onclick="location.reload()">Jugar de nuevo</button>
+    </div>
+    <div class="container">
+        <div class="letters" style="--m: 27; --tan: 0.41">
+            <div class="letterContainer" id="containerA" style="--i: 21">A</div>
+            <div class="letterContainer" id="containerB" style="--i: 22">B</div>
+            <div class="letterContainer" id="containerC" style="--i: 23">C</div>
+            <div class="letterContainer" id="containerD" style="--i: 24">D</div>
+            <div class="letterContainer" id="containerE" style="--i: 25">E</div>
+            <div class="letterContainer" id="containerF" style="--i: 26">F</div>
+            <div class="letterContainer" id="containerG" style="--i: 27">G</div>
+            <div class="letterContainer" id="containerH" style="--i: 1">H</div>
+            <div class="letterContainer" id="containerI" style="--i: 2">I</div>
+            <div class="letterContainer" id="containerJ" style="--i: 3">J</div>
+            <div class="letterContainer" id="containerK" style="--i: 4">K</div>
+            <div class="letterContainer" id="containerL" style="--i: 5">L</div>
+            <div class="letterContainer" id="containerM" style="--i: 6">M</div>
+            <div class="letterContainer" id="containerN" style="--i: 7">N</div>
+            <div class="letterContainer" id="containerÑ" style="--i: 8">Ñ</div>
+            <div class="letterContainer" id="containerO" style="--i: 9">O</div>
+            <div class="letterContainer" id="containerP" style="--i: 10">P</div>
+            <div class="letterContainer" id="containerQ" style="--i: 11">Q</div>
+            <div class="letterContainer" id="containerR" style="--i: 12">R</div>
+            <div class="letterContainer" id="containerS" style="--i: 13">S</div>
+            <div class="letterContainer" id="containerT" style="--i: 14">T</div>
+            <div class="letterContainer" id="containerU" style="--i: 15">U</div>
+            <div class="letterContainer" id="containerV" style="--i: 16">V</div>
+            <div class="letterContainer" id="containerW" style="--i: 17">W</div>
+            <div class="letterContainer" id="containerX" style="--i: 18">X</div>
+            <div class="letterContainer" id="containerY" style="--i: 19">Y</div>
+            <div class="letterContainer" id="containerZ" style="--i: 20">Z</div>
+        </div>
+    </div>
+    <!-- profe si te lees esto guiñame un ojo!-->
+    <div id="container">
+        <video autoplay="true" id="videoElement"></video>
+    </div>
+    <div id="ventanaEntrada">
+        <form id="inicio" onsubmit="userNameCatcher()">
+            <h1 id="bienvenido">¡EL ROSCO!<br>Es tu momento<br>¿Podrás resolverlo?</h1><br>
+            <label for="userNombre">¿Cómo te llamas Concursante?:</label><br>
+            <input type="text" id="userNombre" name="userNombre"><br>
+            <button id="comencemos" type="button" onclick="userNameCatcher()">Comencemos</button>
+        </form>
+    </div>
+    <div id="preguntando">
+        <form id="preguntandoForm" onsubmit="answering()">
             <label id="pregunta" for="respuesta"></label><br>
             <input type="text" id="respuesta" name="respuesta"><br>
-      </form>
-</div>
-<div id="info">
-<div id="puntosContainer">
-    <h2 id="puntosLabel">Puntos </h2>
-    <h2 id="pointsDisplay">0</h2>
-</div>
-<div id="tiempoContainer">
-    <h2 id="tiempoLabel">Tiempo </h2>
-    <h2 id="secondsDisplay">100</h2>
-</div>
-</div>
-<div id="risas">
-<img id="fotoRisas" src="presentador.png" alt="presentador">
-</div>
-<audio id="musicaFondo" loop autoplay controls>
-    <source src="musica de fondo.mp3">
-</audio>
-<audio id="correcto" src="correcto.mp3"></audio>
-<script type="text/javascript" src="pasapalabra-html.js">
-</script>
+        </form>
+    </div>
+    <div id="info">
+        <div id="puntosContainer">
+            <h2 id="puntosLabel">Puntos </h2>
+            <h2 id="pointsDisplay">0</h2>
+        </div>
+        <div id="tiempoContainer">
+            <h2 id="tiempoLabel">Tiempo </h2>
+            <h2 id="secondsDisplay">100</h2>
+        </div>
+    </div>
+    <div id="risas">
+        <img id="fotoRisas" src="presentador.png" alt="presentador">
+    </div>
+    <audio id="musicaFondo" loop autoplay controls>
+        <source src="musica de fondo.mp3">
+    </audio>
+    <audio id="correcto" src="correcto.mp3"></audio>
+    <script type="text/javascript" src="pasapalabra-html.js">
+    </script>
 </body>
+
 </html>

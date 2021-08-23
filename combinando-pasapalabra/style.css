@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'round_popregular';
     src: url('gomarice_round_pop-webfont.woff2') format('woff2'),
-         url('gomarice_round_pop-webfont.woff') format('woff');
+        url('gomarice_round_pop-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -11,177 +11,199 @@
 
 /*Mi CSS */
 body {
-  font-family: 'round_popregular';
-  background-color: #14213d;
-  color: whitesmoke;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("background.jpg");
- background-color: #cccccc;
- background-size: cover;
+    font-family: 'round_popregular';
+    background-color: #14213d;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("background.jpg");
+    background-color: #cccccc;
+    background-size: cover;
 }
 
 .letters {
-  --d: 80px; /* image size */
-  --rel: 3; /* how much extra space we want between images, 1 = one image size */
-  --r: calc(0.5 * (1 + var(--rel)) * var(--d) / var(--tan)); /* circle radius */
-  --s: calc(2 * var(--r) + var(--d)); /* container size */
-  position: relative;
-  width: var(--s);
-  height: var(--s);
-  padding: 0;
-  margin-left: 40px;
-  margin-top: 30px;
-  margin-right: 20px;
+    --d: 80px;
+    /* image size */
+    --rel: 3;
+    /* how much extra space we want between images, 1 = one image size */
+    --r: calc(0.5 * (1 + var(--rel)) * var(--d) / var(--tan));
+    /* circle radius */
+    --s: calc(2 * var(--r) + var(--d));
+    /* container size */
+    position: relative;
+    width: var(--s);
+    height: var(--s);
+    padding: 0;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-right: 20px;
 }
 
 .letters div {
-  position: absolute;
-  background: #2243B6;
-  color: white;
-  font-weight: bold;
-  font-size: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  border-radius: 100%;
-  margin: calc(-0.5 * var(--d));
-  width: var(--d);
-  height: var(--d);
-  --az: calc(var(--i) * 1turn / var(--m));
-  transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1 * var(--az)));
+    position: absolute;
+    background: #2243B6;
+    color: white;
+    font-weight: bold;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    margin: calc(-0.5 * var(--d));
+    width: var(--d);
+    height: var(--d);
+    --az: calc(var(--i) * 1turn / var(--m));
+    transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1 * var(--az)));
 }
 
-#ventanaEntrada{
-  position: absolute;
-  background: #2243B6;
-  z-index: 15;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-  padding: 70px 0;
-  font-size: 15px;
-  width: 500px;
-  display: block;
+#ventanaEntrada {
+    position: absolute;
+    background: #2243B6;
+    z-index: 15;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 15px;
+    width: 500px;
+    display: block;
 }
 
-#preguntando{
-  position: absolute;
-  background: #2243B6;
-  z-index: 12;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-  padding: 70px 0;
-  font-size: 25px;
-  margin-left: 20px;
-  left: 0;
-  display: none;
-  width: 470px;
+#preguntando {
+    position: absolute;
+    background: #2243B6;
+    z-index: 12;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 25px;
+    margin-left: 20px;
+    left: 0;
+    display: none;
+    width: 470px;
 }
 
-#inicio, #preguntandoForm{
-  margin:auto;
+#inicio,
+#preguntandoForm {
+    margin: auto;
 }
 
-#comencemos{
-  border-radius: 15px;
-  background: #5DADEC;
+#comencemos {
+    border-radius: 15px;
+    background: #5DADEC;
 }
 
-#vicio{
-  border-radius: 15px;
-  background: #5DADEC;
+#vicio {
+    border-radius: 15px;
+    background: #5DADEC;
 }
 
 .container {
- position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 #container {
-   width: 100%;
-   height: 100vh;
-   z-index: -1;
-   -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
+
 #videoElement {
-   width: 100%;
-   height: 100%;
-   border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
 }
 
-#risas{
-  position: absolute;
-  z-index:30;
-  bottom: 0;
-  display: none;
+#risas {
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    display: none;
 }
 
-#musicaFondo{
-  position: absolute;
-  bottom: 0;
-  right: 0;
+#musicaFondo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
-#puntosContainer{
-position: absolute;
-  right: 10px;
-  background: #2243B6;
-  border-radius: 15px;
-  text-align: center;
-  top:  100px;
-  padding: 10px;
+#puntosContainer {
+    position: absolute;
+    right: 10px;
+    background: #2243B6;
+    border-radius: 15px;
+    text-align: center;
+    top: 100px;
+    padding: 10px;
 }
 
-#tiempoContainer{
-  position: absolute;
-  right: 10px;
-  background: #2243B6;
-  border-radius: 15px;
-  text-align: center;
-  top: 300px;
-  padding: 10px;
+#tiempoContainer {
+    position: absolute;
+    right: 10px;
+    background: #2243B6;
+    border-radius: 15px;
+    text-align: center;
+    top: 300px;
+    padding: 10px;
 }
-#puntuaciones{
-  display: none;
-  z-index: 50;
-  position: absolute;
-  background: #2243B6;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-  padding: 70px 0;
-  font-size: 15px;
-  width: 500px;
-  font-size: 30px;
+
+#puntuaciones {
+    display: none;
+    z-index: 50;
+    position: absolute;
+    background: #2243B6;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 15px;
+    width: 500px;
+    font-size: 30px;
 }
 
 .seleccionada {
-  animation: blinkingText 1s infinite;
+    animation: blinkingText 1s infinite;
 }
 
 @keyframes blinkingText {
-  0%{     color: white;    }
-  20%{     color: white;    }
-  50% {    color:transparent;  }
-  60%{     color: white;    }
-  100%{     color: white;    }
+    0% {
+        color: white;
+    }
+
+    20% {
+        color: white;
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    60% {
+        color: white;
+    }
+
+    100% {
+        color: white;
+    }
 }
 
-.acierto{
-  background-color: #3AA655 !important;
+.acierto {
+    background-color: #3AA655 !important;
 }
-.fallo{
-  background-color: #DA2C43 !important;
+
+.fallo {
+    background-color: #DA2C43 !important;
 }
