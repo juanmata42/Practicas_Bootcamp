@@ -1,0 +1,27 @@
+#logoArriba img{
+    width:100%;
+    height: auto;
+}
+#barraSuperior{
+  background-color: #466995;
+  border-bottom: 1px solid #466995;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+ul {
+  text-align: left;
+}
+
+li {
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  width: 80px;  
+}
+
+li:hover {
+  color: #DBE9EE;
+}

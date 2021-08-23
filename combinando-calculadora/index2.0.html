@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>CALCULATOR</title>
+<link rel="icon" href="pngegg.png" type="image/icon type">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table class = "calculadora" >
+    <tr>
+    <!-- pantalla -->
+        <td colspan = "5" class = "pantalla" id = "resultado"></td>
+    </tr>
+    <tr>
+        <!-- display() function-->
+        <td> <button class = "button" type = "button" onclick = "display('7')" />7</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('8')" />8</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('9')" />9</button></td>
+        <td> <button class = "button" type = "button" onclick = "operador('/')" />÷</button></td>
+        <!-- AC limpia todo -->
+        <td> <button class = "button" type = "button" onclick = "AC()" style = "background-color: #fb0066;" />AC</button></td>
+    </tr>
+    <tr>
+        <td> <button class = "button" type = "button" onclick = "display('4')" />4</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('5')" />5</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('6')" />6</button></td>
+        <td> <button class = "button" type = "button" onclick = "operador('*')" />x</button></td>
+        <td> <button id="raiz" class = "button" type = "button" onclick = "operador('**1/')" /><sup>y</sup>√<sub>x</sub></button></td>
+    </tr>
+    <tr>
+        <td> <button class = "button" type = "button" onclick = "display('1')" />1</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('2')" />2</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('3')" />3</button></td>
+        <td> <button class = "button" type = "button" onclick = "operador('-')" />-</button></td>
+        <td> <button id="potencia" class = "button" type = "button" onclick = "operador('**')" />X<sup>y</sup></button></td>
+    </tr>
+    <tr>
+        <td> <button class = "button" type = "button" onclick = "display('.')" />.</button></td>
+        <td> <button class = "button" type = "button" onclick = "display('0')" />0</button></td>
+        <td> <button class = "button" type = "button" onclick = "operador('+')" />+</button></td>
+        <!-- calcular() function -->
+        <td colspan = "2"> <button class = "button" type = "button" onclick = "calcular()" style = "background-color: #fb0066;" />=</button></td>
+    </tr>
+ </table>
+<div class="dumpGifs">
+    <img src="alligator.gif"><img src="unnamed.gif">
+    <img src="calculator.gif"><img src="jebusDance.gif">
+    <img src="calculator 2.gif"><img src="unnamed.gif">
+    <img src="calculator 3.gif"><img src="jebusDance.gif">
+    <img src="otra.webp"><img src="unnamed.gif">
+    <img src="c4.gif"><img src="jebusDance.gif">
+</div>
+<script type="text/javascript" src="calculadoraDom.js"></script>
+</body>
+</html>
