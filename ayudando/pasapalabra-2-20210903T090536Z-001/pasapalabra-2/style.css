@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+   background-color: #3665b8;
+}
+
+#true {
+     margin-left: 10px;
+}
+
+#false {
+    margin-left: 10px;
+}
+
+
+.container-title{
+    padding: 10px 0 25px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: xxx-large;
+    margin: 0 auto;
+    color: darkblue;
+    font-family: cursive;
+    text-decoration: underline;
+}
+
+
+.container-section{
+    
+    display: flex;
+}
+
+.container-rosco{
+    width: 100%;
+    position: relative;
+    height: 500px;
+}
+
+.circle {
+    display: flex;
+    position: relative;
+    width: 22.5em;
+    height: 22.5em;
+    border-radius: 50%;
+    padding: 0;
+    list-style: none;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+}
+
+.circle > li {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.25em;
+    height: 2.25em;
+    margin: -1.125em; 
+}
+
+.circle > li:nth-of-type(1) {
+    transform: rotate(270deg) translate(11.25em) rotate(-270deg); }
+.circle > li:nth-of-type(2) {
+    transform: rotate(283.33deg) translate(11.25em) rotate(-283.33deg); }
+.circle > li:nth-of-type(3) {
+    transform: rotate(296.66deg) translate(11.25em) rotate(-296.66deg); }
+.circle > li:nth-of-type(4) {
+    transform: rotate(309.99deg) translate(11.25em) rotate(-309.99deg); }
+.circle > li:nth-of-type(5) {
+    transform: rotate(323.32deg) translate(11.25em) rotate(-323.32deg); }
+.circle > li:nth-of-type(6) {
+    transform: rotate(336.65deg) translate(11.25em) rotate(-336.65deg); }
+.circle > li:nth-of-type(7) {
+    transform: rotate(349.98deg) translate(11.25em) rotate(-349.98deg); }
+.circle > li:nth-of-type(8) {
+    transform: rotate(363.31deg) translate(11.25em) rotate(-363.31deg); }
+.circle > li:nth-of-type(9) {
+    transform: rotate(376.64deg) translate(11.25em) rotate(-376.64deg); }
+.circle > li:nth-of-type(10) {
+    transform: rotate(389.97deg) translate(11.25em) rotate(-389.97deg); }
+.circle > li:nth-of-type(11) {
+    transform: rotate(403.3deg) translate(11.25em) rotate(-403.3deg); }
+.circle > li:nth-of-type(12) {
+    transform: rotate(416.63deg) translate(11.25em) rotate(-416.63deg); }
+.circle > li:nth-of-type(13) {
+    transform: rotate(429.96deg) translate(11.25em) rotate(-429.96deg); }
+.circle > li:nth-of-type(14) {
+    transform: rotate(443.29deg) translate(11.25em) rotate(-443.29deg); }
+.circle > li:nth-of-type(15) {
+    transform: rotate(456.62deg) translate(11.25em) rotate(-456.62deg); }
+.circle > li:nth-of-type(16) {
+    transform: rotate(469.95deg) translate(11.25em) rotate(-469.95deg); }
+.circle > li:nth-of-type(17) {
+    transform: rotate(483.28deg) translate(11.25em) rotate(-483.28deg); }
+.circle > li:nth-of-type(18) {
+    transform: rotate(496.61deg) translate(11.25em) rotate(-496.61deg); }
+.circle > li:nth-of-type(19) {
+    transform: rotate(509.94deg) translate(11.25em) rotate(-509.94deg); }
+.circle > li:nth-of-type(20) {
+    transform: rotate(523.27deg) translate(11.25em) rotate(-523.27deg); }
+.circle > li:nth-of-type(21) {
+    transform: rotate(536.6deg) translate(11.25em) rotate(-536.6deg); }
+.circle > li:nth-of-type(22) {
+    transform: rotate(549.93deg) translate(11.25em) rotate(-549.93deg); }
+.circle > li:nth-of-type(23) {
+    transform: rotate(563.26deg) translate(11.25em) rotate(-563.26deg); }
+.circle > li:nth-of-type(24) {
+    transform: rotate(576.59deg) translate(11.25em) rotate(-576.59deg); }
+.circle > li:nth-of-type(25) {
+    transform: rotate(589.92deg) translate(11.25em) rotate(-589.92deg); } 
+.circle > li:nth-of-type(26) {
+    transform: rotate(603.25deg) translate(11.25em) rotate(-603.25deg); } 
+.circle > li:nth-of-type(27) {
+    transform: rotate(616.58deg) translate(11.25em) rotate(-616.58deg); } 
+
+.circle .letter {
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    /* background-image: radial-gradient(circle, #0c66b6, #012c52); */
+    background-color: rgb(18, 18, 110);
+    color: #fff;
+    line-height: 2.25em;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+    text-transform: uppercase;
+}
+  
+.text-container{
+    
+    position: relative
+}
+
+.presentation{
+   
+    justify-content: center;
+    font-size: -webkit-xxx-large;
+    color: antiquewhite;
+}
+
+.rules-container{
+    
+    height: 200px;
+    font-size: 20px;
+    color: cornsilk;
+    height: 250px;
+}
+
+.rules-container p{
+    margin: 10px auto;
+    padding: 10px;
+    
+}
+
+.button{
+   
+    text-align-last: center;
+    height: 90px;
+}
+
+.button #buttonPlay{
+    font-size: 30px;
+    height: 60px;
+    margin: 25px;
+    width: 5.5em;
+    background-color: rgb(54, 54, 182);
+    cursor: pointer;
+}
+
+
+
+.time-words{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time{
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    color: blanchedalmond;
+    font-family: sans-serif;
+    
+}
+
+
+
+.container-palabra{
+    color: blanchedalmond;
+    font-size: 50PX;
+    font-family: sans-serif;
+}
+
+.container-palabra p{
+    border: 5px solid rgb(38, 9, 119);
+    border-radius: 50%;
+    padding: 14px;
+    color: blanchedalmond;
+    font-family: sans-serif;
+}
+
+.true-false{
+    color: blanchedalmond;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.punto {
+    display: flex;
+    
+}
+
+.menos {
+    display: flex;
+}
+
+.question{
+    width: 90%;
+    height: 125px;
+    margin: 40px;
+    padding: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.answer{
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+    text-align-last: center;
+}
+
+.answer #respuesta{
+    font-size: 30px;
+}
+
+.answer #ok{
+    font-size: 35px;
+    cursor: pointer;
+    background-color: rgb(100, 100, 235);
+    color: chartreuse;
+    box-shadow: 3px 3px 2px;    
+}
+
+.answer #buttonPasapalabra{
+    font-size: 35px;
+    cursor: pointer;
+    background-color: rgb(100, 100, 235);
+    text-transform: uppercase;
+    color: rgb(179, 216, 45);
+    box-shadow: 3px 3px 2px;
+}
+
+.answer #stop{
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(209, 10, 10);
+    background-color: rgb(100, 100, 235);
+    box-shadow: 3px 3px 2px;
+}
+
+.fotter{
+    font-family: cursive;
+    text-align-last: center;
+}
+

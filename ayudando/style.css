@@ -1,0 +1,57 @@
+.cardBox {
+    display: flex;
+    position: relative;
+    font-size: 1.2em;
+    margin: 1% 0 0 1%;
+    /*esta propiedad es la que le da profundidad (eje Z) a la capa*/
+    perspective: 800px;
+    /*Las transiciones se basan en un principio muy básico,
+    conseguir un efecto suavizado entre un estado inicial y un estado final 
+    en esta capa indicamos que haya transicion en todos las propiedades*/
+    transition: all 0.3s ease 0s;
+    width: 23.7%;
+    height: 50%;
+}
+
+
+.cardBox:hover .flip-card {
+   /* con rotate hacemos una imagen especular
+    con esto se ve como el culo porque es  
+    darle la vuelta a las letras ;*/
+    transform: rotateY( 180deg);
+}
+
+/*esta es la animacion que hay que lanzar en javascript*/
+.arotar180Y{
+    transform: rotateY( 180deg);
+ }
+
+.flip-card {
+    position: relative;
+    background: #222;
+    cursor: default;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease 0s;
+    /*Pendiente de incluir las animaciones
+    -webkit-animation: giro 1s 1;
+    animation: giro 1s 1 ;*/
+}
+
+.flip-card .front, .flip-card .back {
+    display: block;
+  position: absolute;
+    backface-visibility: hidden;
+    color: white;
+   /* text-align: center;*/
+    padding: 0.8em;
+     
+}
+
+.flip-card .back {
+    /*Hay que volver a rotar esta capa para que al dar la vuelta
+    se pueda ver normal*/
+    transform: rotateY( 180deg);
+}

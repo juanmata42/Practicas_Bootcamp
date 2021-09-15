@@ -19,6 +19,12 @@
         <div id="5"></div>
         <button type="button" id="vicio" onclick="location.reload()">Jugar de nuevo</button>
     </div>
+    <div id="preguntando">
+        <form id="preguntandoForm" onsubmit="answering()">
+            <label id="pregunta" for="respuesta"></label><br>
+            <input type="text" id="respuesta" name="respuesta"><br>
+        </form>
+    </div>
     <div class="container">
         <div class="letters" style="--m: 27; --tan: 0.41">
             <div class="letterContainer" id="containerA" style="--i: 21">A</div>
@@ -60,12 +66,6 @@
             <label for="userNombre">¿Cómo te llamas Concursante?:</label><br>
             <input type="text" id="userNombre" name="userNombre"><br>
             <button id="comencemos" type="button" onclick="userNameCatcher()">Comencemos</button>
-        </form>
-    </div>
-    <div id="preguntando">
-        <form id="preguntandoForm" onsubmit="answering()">
-            <label id="pregunta" for="respuesta"></label><br>
-            <input type="text" id="respuesta" name="respuesta"><br>
         </form>
     </div>
     <div id="info">

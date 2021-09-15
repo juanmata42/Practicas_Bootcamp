@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de animaciones</title>
+    <link rel="stylesheet" href="animaciones.css">
+</head>
+<body>
+    <h1>Tarjeta de preguntas del pasapalabra</h1>
+    <div class=container>
+        <div class="questions-container">
+            <div class="cardBox">
+                <div class="flip-card">
+                    <div class="front">
+                        <h3 id="question-header">CON LA A</h3>
+                        <p id="question-body">
+                            Conducto por donde va la sangre desde el corazón a las demás partes del cuerpo.
+                        </p>
+                    </div>
+                    <div class="back success">
+                        <h3>Perfecto</h3>
+                        <p>Arteria es la respuesta correcta</p>
+                    </div>
+                    
+                </div>
+                <button>rotar1"</button>
+                <button>rotar2"</button>
+            </div>
+            <div class="cardBox">
+                <div class="flip-card .arotar180Y">
+                    <div class="front">
+                        <h3 id="question-header">CON LA S</h3>
+                        <p id="question-body">
+                            Acto de sacar dinero a alguien pidiéndoselo, por lo general, con habilidad o insistencia y sin intención de devolverlo.
+                        </p>
+                    </div>
+                    <div class="back error">
+                        <h3>NOOOOOO!!!! OOOOOOH</h3>
+                        <p>La respuesta correcta era sablazo</p>
+                    </div>
+                    <input type=button value="envia">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="animaciones.js"></script>
+</body>
+</html>

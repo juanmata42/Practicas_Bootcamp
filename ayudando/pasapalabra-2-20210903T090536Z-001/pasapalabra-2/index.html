@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="container-title">
+                <h2>pasapalabra</h2>
+            </div>
+        </div>
+        <div class="header">
+            <div class="container-section">
+                <div class="container-rosco">
+                    <ul class="circle">
+                        <li class="letter" id="a">a</li>
+                        <li class="letter" id="b">b</li>
+                        <li class="letter" id="c">c</li>
+                        <li class="letter" id="d">d</li>
+                        <li class="letter" id="e">e</li>
+                        <li class="letter" id="f">f</li>
+                        <li class="letter" id="g">g</li>
+                        <li class="letter" id="h">h</li>
+                        <li class="letter" id="i">i</li>
+                        <li class="letter" id="j">j</li>
+                        <li class="letter" id="k">k</li>
+                        <li class="letter" id="l">l</li>
+                        <li class="letter" id="m">m</li>
+                        <li class="letter" id="n">n</li>
+                        <li class="letter" id="ñ">ñ</li>
+                        <li class="letter" id="o">o</li>
+                        <li class="letter" id="p">p</li>
+                        <li class="letter" id="q">q</li>
+                        <li class="letter" id="r">r</li>
+                        <li class="letter" id="s">s</li>
+                        <li class="letter" id="t">t</li>
+                        <li class="letter" id="u">u</li>
+                        <li class="letter" id="v">v</li>
+                        <li class="letter" id="w">w</li>
+                        <li class="letter" id="x">x</li>
+                        <li class="letter" id="y">y</li>
+                        <li class="letter" id="z">z</li>
+                    </ul>
+                </div>
+                <div class="text-container">
+                    <div class="presentation">
+                        <h3 class="text-presentacion">Bienvenidos al juego de pasapalabra de skylab coder academy!</h3>
+                    </div>
+                    <div class="rules-container">
+                        <p>Basado en el exitoso concurso de televisión Pasapalabra de Telecinco, las normas son muy sencillas:</p>
+                        <p>Se mostrarán definiciones por la pantalla y el usuario deberá responder con la palabra a la que corresponden. El ususario tiene la opción de pulsar Pasapalabra y dejar la definición para más adelante.</p>
+                        <p>El programa es sensible a la acentuación, así que se debe introducir la palabra sin tilde. Es posible utilizar la tecla Enter para enviar la palabra y Space para hacer pasapalabra</p>
+                    </div>
+                    <div class="button">
+                        <button id="buttonPlay">&#9197;&#65039;Jugar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-game">
+            <div class="time-words">
+                <div class="time">
+                    <p class="temps">&#x23f3;</p>
+                    <p class="tiempo" id="myTimer">150</p>
+                </div>
+                <div class="container-palabra">
+                    <p class="palabra" id="palabras">27</p>
+                </div>
+                <div class="true-false">
+                    <div class="punto">
+                        <p class="aciertos">Aciertos:</p>
+                        <p id="true">0</p>
+                    </div>
+                    <div class="menos">
+                        <p class="fallos">Fallos:</p>
+                        <p id="false">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-play">
+            <div class="question-answer">
+                <div class="question">
+                    <section id="pregunta">¿?¿?¿?Pregunta?¿?¿?¿?</section>
+                </div>
+                <form class="answer">
+                    <input id="respuesta" placeholder="Respuesta" type="text">
+                    <button type="submit" class="buttonJuego" id="ok">OK</button>
+                    <button class="buttonJuego" id="buttonPasapalabra">Pasapalabra</button>
+                    <button type="reset" class="buttonJuego" id="stop">STOP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="fotter"><h4>Made wich &#128154 Xavier Tadeo</h4></div>    
+</body>
+<script src="pasapalabra4.js"></script>
+</html>

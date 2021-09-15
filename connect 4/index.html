@@ -1,14 +1,99 @@
 <!doctype html>
-
 <html>
+
 <head>
-<title>CALCULATOR</title>
-<link rel="icon" href="pngegg.png" type="image/icon type">
-<link rel="stylesheet" href="style.css">
+    <title>Connect 4</title>
+    <link rel="icon" href="vaderLogo.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- your content here... -->
-  <script src="js/scripts.js"></script>
+    <div id="izquierda">
+        <table id="tablaOpciones">
+            <tr>
+                <th colspan="4">Player 1</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="rebeldes.png" onclick="P1Selector(this)" class="botonesSelectores"><img src="rebeldes.png"></button></td>
+                <td><button type="button" id="imperio.png" onclick="P1Selector(this)" class="botonesSelectores"><img src="imperio.png"></button></td>
+                <td><button type="button" id="droide.png" onclick="P1Selector(this)" class="botonesSelectores"><img src="droide.png"></button></td>
+                <td><button type="button" id="droidemalo.png" onclick="P1Selector(this)" class="botonesSelectores"><img src="droidemalo.png"></button></td>
+            </tr>
+            <tr>
+                <th colspan="4">Player 2</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="rebeldes2.png" onclick="P2Selector(this)" class="botonesSelectores"><img src="rebeldes2.png"></button></td>
+                <td><button type="button" id="imperio2.png" onclick="P2Selector(this)" class="botonesSelectores"><img src="imperio2.png"></button></td>
+                <td><button type="button" id="droide2.png" onclick="P2Selector(this)" class="botonesSelectores"><img src="droide2.png"></button></td>
+                <td><button type="button" id="droidemalo2.png" onclick="P2Selector(this)" class="botonesSelectores"><img src="droidemalo2.png"></button></td>
+            </tr>
+        </table>
+        <button type="button" id="restart" onclick="restart()">restart</button>
+    </div>
+    <table id="juego">
+        <tr class="titlerow">
+            <th colspan="7">connect 4</th>
+        </tr>
+        <tr class="row0">
+            <td><button class="col0" type="button" id="1" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="2" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="3" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="4" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="5" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="6" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="7" onclick="meteficha(this)" ></button></td>
+        </tr>
+        <tr class="row1">
+            <td><button class="col0" type="button" id="8" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="9" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="10" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="11" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="12" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="13" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="14" onclick="meteficha(this)" ></button></td>
+        </tr>
+        <tr class="row2">
+            <td><button class="col0" type="button" id="15" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="16" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="17" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="18" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="19" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="20" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="21" onclick="meteficha(this)" ></button></td>
+        </tr>
+        <tr class="row3">
+            <td><button class="col0" type="button" id="22" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="23" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="24" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="25" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="26" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="27" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="28" onclick="meteficha(this)" ></button></td>
+        </tr>
+        <tr class="row4">
+            <td><button class="col0" type="button" id="29" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="30" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="31" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="32" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="33" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="34" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="35" onclick="meteficha(this)" ></button></td>
+        </tr>
+        <tr class="row5">
+            <td><button class="col0" type="button" id="36" onclick="meteficha(this)" ></button></td>
+            <td><button class="col1" type="button" id="37" onclick="meteficha(this)" ></button></td>
+            <td><button class="col2" type="button" id="38" onclick="meteficha(this)" ></button></td>
+            <td><button class="col3" type="button" id="39" onclick="meteficha(this)" ></button></td>
+            <td><button class="col4" type="button" id="40" onclick="meteficha(this)" ></button></td>
+            <td><button class="col5" type="button" id="41" onclick="meteficha(this)" ></button></td>
+            <td><button class="col6" type="button" id="42" onclick="meteficha(this)" ></button></td>
+        </tr>
+    </table>
+    <div class="mano" id="Mrebelde.png"><img src="Mrebelde.png"></div>
+    <div class="mano" id="Mimperio.png"><img src="Mimperio.png"></div>
+    <div id="fin">The empire wins</div>
+    <script src="connect4.js" defer></script>
 </body>
+
 </html>
