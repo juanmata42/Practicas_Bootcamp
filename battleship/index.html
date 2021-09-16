@@ -1,45 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Battleship</title>
-    <link rel="icon" href="icon.png" type="image/icon type">
-    <link rel="stylesheet" href="style.css">
-</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Batalla naval</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="icon" href="icon.png" type="image/icon type">
+	<link rel="stylesheet" href="style.css">
 
 <body>
-    <div id="escogedor">
-        <button id="grecia" class="botonesSelectores" onclick="civChosen('grecia')"><img src="greekLogo.png"></button>
-        <button id="corea" class="botonesSelectores" onclick="civChosen('corea')"><img src="koreanLogo.png"></button>
-        <button id="vikingos" class="botonesSelectores" onclick="civChosen('vikingos')"><img src="vikingsLogo.png"></button>
-    </div>
-    <button id="fin" onclick="location.reload()"><p id="ganador">victoria</p><img src="greciavictoria.jpg" id="ganadorFoto">Jugar de nuevo</button>
-    <div id="tuZona">
-        <table id=tuGrid></table>
-        <div id="trebuchet"><img src="trebuchet.gif"></div>
-
-    </div>
-    <div id="suZona">
-        <div id="barcos">
-            <p id="titulobarcos">despliega tu flota</p>
-            <button id="barco5" class="botonesBarcos" onclick="barcoSeleccion(this,50)"></button>
-            <button id="barco4" class="botonesBarcos" onclick="barcoSeleccion(this,40)"><img src="transporteH.png"></button>
-            <div id="barcos3">
-                <button id="barco3_1" class="botonesBarcos" onclick="barcoSeleccion(this,31)"><img src="scoutH.png"></button>
-                <button id="barco3_2" class="botonesBarcos" onclick="barcoSeleccion(this,32)"><img src="scoutH.png"></button>
-            </div>
-            <div id="barcos2">
-                <button id="barco2_1" class="botonesBarcos" onclick="barcoSeleccion(this,21)"><img src="canoaH.png"></button>
-                <button id="barco2_2" class="botonesBarcos" onclick="barcoSeleccion(this,22)"><img src="canoaH.png"></button>
-            </div>
-            <p>pulsa r para rotar el barco</p>
-        </div>
-        <table id=suGrid></table>
-        <div id="trebuchetIA"><img src="trebuchetR.gif"></div>
-        <div id="fireball"><img src="fireball.gif"></div>
-        <div id="fireballIA"><img src="fireball.gif"></div>
-    </div>
-    <script src="battleship.js"></script>
+	<p>escoge a tu contrincante</p>
+	<div id="cajaBotones">
+	<a href="IAfacil.html"><button><p id="dios">κοάλεμος</p><br>dios de la insensatez</button></a>
+	<a href="IAnormal.html"><button><p id="dios">αθηνά</p><br>diosa de la estrategia</button></a>
+	</div>
 </body>
 
 </html>

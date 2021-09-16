@@ -16,7 +16,6 @@ let civIA
 let civilizaciones = ["grecia", "corea", "vikingos"]
 let inicialN
 let inicialNIA
-let barcos = []
 let direccion = 0 //0 horizontal,1 vertical
 let VoH = ["V", "H"];
 let barcoInsignia
@@ -26,7 +25,7 @@ let barcoNum = 0
 let turn = "jugador"
 let turnoNumber = 1
 let modo = "buscando"
-let posicionesTusBarcos={50:[],40:[],31:[],32:[],21:[],22:[]}
+let posicionesTusBarcos = { 50: [], 40: [], 31: [], 32: [], 21: [], 22: [] }
 let barcosIMG = {
     5: { vk: ["longboatH.png", "longboatV.png"], G: ["trirremoH.png", "trirremoV.png"], K: ["tortugaH.png", "tortugaV.png"] },
     4: ["transporteH.png", "transporteV.png"],
@@ -69,6 +68,7 @@ function range(start, stop, step) {
 
     return result;
 };
+
 
 //pinta el tablero y genera un board en la memoria
 
@@ -217,7 +217,7 @@ function civChosen(eleccion) {
     tablero("tuGrid")
     document.getElementById("barcos").style.display = "flex";
     setTimeout(() => {
-        //poner esto al final qwerty BSO.play();
+        BSO.play();
     }, 6000);
 }
 
@@ -352,7 +352,7 @@ function despliegue(casilla) {
             let columna = parseInt(arrayCasillas[i].classList[1].slice(-1))
             tu_game_board[fila][columna].barco = barcoNum
             //lo pone para que la IA pueda leer luego 
-            posicionesTusBarcos[barcoNum].push(tu_game_board[fila][columna].casillaGrafica)
+            posicionesTusBarcos[barcoNum].push(tu_game_board[fila][columna])
         }
         //añade a lista de casillas ocupadas
         updateOcupadas()
@@ -615,7 +615,7 @@ function hitOrMiss(casilla, board) {
         if (turn === "AI") {
             //barco 0 es si es agua
             arrayVisionIA[fila][columna].barco = 0
-            if (modo==="apuntando"){
+            if (modo === "apuntando") {
                 posibleCasillaID.splice(posibleCasillaID.indexOf(casilla.id), 1)
             }
         }
@@ -627,27 +627,29 @@ function hitOrMiss(casilla, board) {
             arrayVisionIA[fila][columna].barco = board[fila][columna].barco
             board[fila][columna].tocado = 1
             let valorBarco = board[fila][columna].barco
-            barcoTocado=valorBarco
+            barcoTocado = valorBarco
+            posicionBarcoTocado = posicionesTusBarcos[barcoTocado]
+            posicionBarcoTocado.splice(posicionBarcoTocado.indexOf(eleccionIA), 1)
             contBarcosTocados.push(valorBarco)
             //el modo se cambia si tocado--> apuntando y si hundido --> buscando
             if (getOccurrence(contBarcosTocados, valorBarco) < primeraCifra(valorBarco)) {
-                ultimoDisparoID=parseInt(`${fila}${columna}`)
+                ultimoDisparoID = parseInt(`${fila}${columna}`)
                 tocadoS.play();
                 prender(casilla)
                 modo = "apuntando"
                 aciertos++
+                //esto se activa solo si es el primer acierto de todo y hace pensar a la IA entorno a él
+                if (aciertos === 1 && primerAciertoID < 0) {
+                    primerAciertoID = ultimoDisparoID
+                    posibleCasillaID = [primerAciertoID + 1, primerAciertoID - 1, primerAciertoID + 10, primerAciertoID - 10]
+                }
             } else {
-                //qwerty esto dará un falso positivo si hay dos barcos pegados. cambiar??
                 board[fila][columna].tocado = 2
                 hundidoS.play();
                 prender(casilla)
                 aciertos++
-                if (aciertos===parseInt(valorBarco.toString()[0]))
-                {
-                modo = "buscando";
-                haciaDonde=["up","down","left","right"];
-                }
-                else{}
+                primerAciertoID = -1
+                modo = "buscando"
             }
         } else {
             board[fila][columna].tocado = 1
@@ -665,30 +667,12 @@ function hitOrMiss(casilla, board) {
         }
     }
 }
-//The fisher-Yates shuffle. only needed if you want the IA to be random
-function shuffle(array) {
-    var m = array.length,
-        t, i;
 
-    // While there remain elements to shuffle…
-    while (m) {
-
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
-
-        // And swap it with the current element.
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-
-    return array;
-}
 let eleccionIA
 //IA disparo
 function disparoIA() {
     turn = "AI"
-    //IA piensa y dispiara
+    //IA piensa y dispara
     eleccionIA = IA()
     trebuchetS.play();
     //obtenemos coordenadas de la casilla pulsada
@@ -730,6 +714,7 @@ function disparoIA() {
 
 //game end
 function gameEnd() {
+    BSO.pause();
     let civVic
     let texto
     if (turn === "jugador") {
@@ -749,8 +734,7 @@ function gameEnd() {
     document.getElementById("ganador").innerText = texto
 }
 let ultimoDisparoID
-let indicesUsadosBuscando=[]
-//qwerty los he hecho a mano, comprobar que los 3 primeros no peten
+let indicesUsadosBuscando = []
 //el array de indices que salta casillas una si una no. me duele la cabeza y no consigo pensar en una forma de crearlo que me lleve menos tiempo que escribirlo a mano
 let indicesUsadosBuscandoDos = [1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 21, 23, 25, 27, 29, 30, 32, 34, 36, 38, 41, 43, 45, 47, 49, 50, 52, 54, 56, 58, 61, 63, 65, 67, 69, 70, 72, 74, 76, 78, 81, 83, 85, 87, 89, 90, 92, 94, 96, 98]
 //para encontrar los de 3
@@ -765,20 +749,19 @@ function IA() {
         //empieza en una casilla "par" y se han excluido ya las casillas "impares" para el modo búsqueda
         let aperturas = [tu_game_board[4][4], tu_game_board[5][5]]
         turnoNumber++
-        let eleccion = randomElementArr(aperturas)
+        let escogida = randomElementArr(aperturas)
         //añade el índice de la elección a los índices usados para el modo buscando
-        indicesUsadosBuscando.push(todasTusCasillas.indexOf(eleccion))
+        indicesUsadosBuscando.push(todasTusCasillas.indexOf(escogida))
         indicesUsadosBuscando = [...new Set(indicesUsadosBuscando)]
-        indicesUsadosBuscandoDos.push(todasTusCasillas.indexOf(eleccion))
+        indicesUsadosBuscandoDos.push(todasTusCasillas.indexOf(escogida))
         indicesUsadosBuscandoDos = [...new Set(indicesUsadosBuscandoDos)]
         //pone el filtro en el barco de dos
         arrayDelMomento = indicesUsadosBuscandoDos
+        arrayDelMomento = arrayDelMomento.concat(indicesUsadosBuscando)
         //pone un 0 en el lugar de la casilla que ya se ha utilizado
-        todasTusCasillas.splice(todasTusCasillas.indexOf(eleccion), 1, 0)
-        //random IA qwerty quitar al poner la verdadera IA
-        //todasTusCasillas=shuffle(todasTusCasillas)
-        ultimoDisparoID = eleccion.casillaGrafica.id
-        return eleccion
+        todasTusCasillas.splice(todasTusCasillas.indexOf(escogida), 1, 0)
+        ultimoDisparoID = escogida.casillaGrafica.id
+        return escogida
     } else {
         //el modo cambia en la funcion hitOrMiss
         if (modo === "buscando") {
@@ -788,9 +771,6 @@ function IA() {
             turnoNumber++
             return apuntando()
         }
-        /*qwerty de la IA random let eleccion = todasTusCasillas[turnoNumber - 2]
-        turnoNumber++
-        return eleccion.casillaGrafica*/
     }
 
 }
@@ -799,23 +779,24 @@ let afinandoPunteria = 2
 let arrayDelMomento
 
 function buscando() {
-    let eleccion
+    let escogida
     /*esto siempre hace lo mismo. 
     escoge un elemento del array con todas tus casillas, excluyendo los índices usados o que deben saltarse.
     cambia el elemento del array por un 0 para marcar que se ha usado y devuelve la elección
     */
     function eligeLaIA() {
-        eleccion = randomExcludingItems(todasTusCasillas, arrayDelMomento)
-        indicesUsadosBuscando.push(todasTusCasillas.indexOf(eleccion))
-        arrayDelMomento.push(todasTusCasillas.indexOf(eleccion))
+        escogida = randomExcludingItems(todasTusCasillas, arrayDelMomento)
+        indicesUsadosBuscando.push(todasTusCasillas.indexOf(escogida))
+        arrayDelMomento = arrayDelMomento.concat(indicesUsadosBuscando)
+        arrayDelMomento.push(todasTusCasillas.indexOf(escogida))
         //limpiamos de repes el array
         arrayDelMomento = [...new Set(arrayDelMomento)]
-        todasTusCasillas.splice(todasTusCasillas.indexOf(eleccion), 1, 0)
-        ultimoDisparoID = eleccion.casillaGrafica.id
-        return eleccion
+        todasTusCasillas.splice(todasTusCasillas.indexOf(escogida), 1, 0)
+        ultimoDisparoID = escogida.casillaGrafica.id
+        return escogida
     }
     //si quedan barcos de 2 por hundir
-    if (!(getOccurrence(contBarcosTocados, 21) === 2)) {
+    if ((getOccurrence(contBarcosTocados, 21)) + (getOccurrence(contBarcosTocados, 22)) < 4) {
         return eligeLaIA()
     }
     //si los barcos de 2 se han hundido todos
@@ -825,10 +806,11 @@ function buscando() {
             //ponemos el array de filtro de 3 a funcionar
             indicesUsadosBuscandoTres.concat(indicesUsadosBuscando)
             arrayDelMomento = indicesUsadosBuscandoTres
+            arrayDelMomento = arrayDelMomento.concat(indicesUsadosBuscando)
             afinandoPunteria++
         }
         //si quedan barcos de 3 por hundir
-        if (!(getOccurrence(contBarcosTocados, 31) === 3)) {
+        if ((getOccurrence(contBarcosTocados, 31)) + (getOccurrence(contBarcosTocados, 32)) < 6) {
             return eligeLaIA()
         }
         //si los barcos de 3 se han hundido todos
@@ -837,10 +819,11 @@ function buscando() {
             if (afinandoPunteria === 3) {
                 indicesUsadosBuscandoCuatro.concat(indicesUsadosBuscando)
                 arrayDelMomento = indicesUsadosBuscandoCuatro
+                arrayDelMomento = arrayDelMomento.concat(indicesUsadosBuscando)
                 afinandoPunteria++
             }
             //si el barco de 4 no se ha hundido aún
-            if (!(getOccurrence(contBarcosTocados, 40) === 4)) {
+            if ((getOccurrence(contBarcosTocados, 40) < 4)) {
                 return eligeLaIA()
             }
             //si se ha hundido todos menos el de 5
@@ -849,6 +832,7 @@ function buscando() {
                 if (afinandoPunteria === 4) {
                     indicesUsadosBuscandoCinco.concat(indicesUsadosBuscando)
                     arrayDelMomento = indicesUsadosBuscandoCinco
+                    arrayDelMomento = arrayDelMomento.concat(indicesUsadosBuscando)
                     afinandoPunteria++
                 }
                 return eligeLaIA()
@@ -857,108 +841,71 @@ function buscando() {
     }
 
 }
-//arriba, abajo, izquierda, derecha
-let haciaDonde=["up","down","left","right"]
-let aciertos=0
-//lista de casillas en las que puede estar
-let posibleCasillaID=[]
+let aciertos = 0
+//lista de id de casillas en las que puede estar
+let posibleCasillaID = []
 let barcoTocado
 let posicionBarcoTocado
-function apuntando() {
+let primerAciertoID = -1
 
-function checkBordes(){
+function apuntando() {
+    if (aciertos === 1) {
+        checkBordes()
+        checkMismoBarco()
+        escogida = todasTusCasillas[randomElementArr(posibleCasillaID)]
+        ultimoDisparoID = escogida.casillaGrafica.id
+        indicesUsadosBuscando.push(todasTusCasillas.indexOf(escogida))
+        arrayDelMomento.push(todasTusCasillas.indexOf(escogida))
+        arrayDelMomento = [...new Set(arrayDelMomento)]
+        todasTusCasillas.splice(todasTusCasillas.indexOf(escogida), 1, 0)
+        return escogida
+    } else if (aciertos > 1) {
+        //entra en modo trampa. una vez ha acertado dos veces, utiliza la verdadera posición del barco del jugador. 
+        //Esto podría darle hasta una ventaja de hasta 4 casillas como máximo (solo en los barcos de más de 2 casillas)
+        //teniendo en cuenta que no es tanto, se va a quedar así
+        escogida = randomElementArr(posicionBarcoTocado)
+        ultimoDisparoID = escogida.casillaGrafica.id
+        indicesUsadosBuscando.push(todasTusCasillas.indexOf(escogida))
+        arrayDelMomento.push(todasTusCasillas.indexOf(escogida))
+        arrayDelMomento = [...new Set(arrayDelMomento)]
+        todasTusCasillas.splice(todasTusCasillas.indexOf(escogida), 1, 0)
+        return escogida
+    }
+
+
+
+    function checkBordes() {
 
         //primer test de posición, bordes del tablero
         //si el id de la casilla derecha es múltiplo de 10, es que está en la siguiente fila y por lo tanto se debe quitar
-        if (posibleCasillaID[posibleCasillaID.indexOf(ultimoDisparoID+1)]%10===0||ultimoDisparoID===99){
-             posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID+1), 1);
-             haciaDonde.splice(haciaDonde.indexOf("right"), 1);
+        if (posibleCasillaID[posibleCasillaID.indexOf(primerAciertoID + 1)] % 10 === 0 || primerAciertoID === 99) {
+            posibleCasillaID.splice(posibleCasillaID.indexOf(primerAciertoID + 1), 1);
         }
         //lo mismo para el lado izquierdo
-        if (ultimoDisparoID%10===0||ultimoDisparoID===0){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID-1), 1);
-            haciaDonde.splice(haciaDonde.indexOf("left"), 1);
+        if (primerAciertoID % 10 === 0 || primerAciertoID === 0) {
+            posibleCasillaID.splice(posibleCasillaID.indexOf(primerAciertoID - 1), 1);
+
         }
         //si está en la última fila
-        if ((ultimoDisparoID+10)>99){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID+10), 1);
-            haciaDonde.splice(haciaDonde.indexOf("up"), 1);
+        if ((primerAciertoID + 10) > 99) {
+            posibleCasillaID.splice(posibleCasillaID.indexOf(primerAciertoID + 10), 1);
+
         }
         //si está en la primera
-        if ((ultimoDisparoID-10)<0){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID-10), 1);
-            haciaDonde.splice(haciaDonde.indexOf("down"), 1);
-        }
-}
-//esto es la IA haciendo trampas, pero estoy cansado hoy y de momento se quedará así. 
-//Evita que la IA ataque un barco adyacente, por simplificar todo. 
-//supongo que compensa por el hecho de que tendrá que "encontrar" el barco que podría haber encontrado aquí.
-function checkMismoBarco(){
-        //casilla derecha
-        if ((!todasTusCasillas[ultimoDisparoID+1].barco===barcoTocado)||(!todasTusCasillas[ultimoDisparoID+1].barco===0)){
-             posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID+1), 1);
-             haciaDonde.splice(haciaDonde.indexOf("right"), 1);
-        }
-        //lo mismo para el lado izquierdo
-        if ((!todasTusCasillas[ultimoDisparoID-1].barco===barcoTocado)||(!todasTusCasillas[ultimoDisparoID-1].barco===0)){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID-1), 1);
-            haciaDonde.splice(haciaDonde.indexOf("left"), 1);
-        }
-        //si está en la última fila
-        if ((!todasTusCasillas[ultimoDisparoID+10].barco===barcoTocado)||(!todasTusCasillas[ultimoDisparoID+10].barco===0)){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID+10), 1);
-            haciaDonde.splice(haciaDonde.indexOf("up"), 1);
-        }
-        //si está en la primera
-        if ((!todasTusCasillas[ultimoDisparoID-10].barco===barcoTocado)||(!todasTusCasillas[ultimoDisparoID-10].barco===0)){
-            posibleCasillaID.splice(posibleCasillaID.indexOf(ultimoDisparoID-10), 1);
-            haciaDonde.splice(haciaDonde.indexOf("down"), 1);
-        }
-}
-//creo que no usare esta función por haber escrito luego la "trampa"
-function siguientePosible(){
-    //filtra si ya antes se sabía algo de la dirección o si se sabe que fue agua
-    if (haciaDonde.includes("right")){
-        if (!(todasTusCasillas[ultimoDisparoID+1]===0)){
-            posibleCasillaID.push(ultimoDisparoID+1)
+        if ((primerAciertoID - 10) < 0) {
+            posibleCasillaID.splice(posibleCasillaID.indexOf(primerAciertoID - 10), 1);
+
         }
     }
-    if (haciaDonde.includes("left")){
-        if (!(todasTusCasillas[ultimoDisparoID-1]===0)){
-            posibleCasillaID.push(ultimoDisparoID-1)
+    //esto es la IA haciendo trampas, pero estoy cansado hoy y de momento se quedará así. 
+    //Evita que la IA ataque un barco adyacente, por simplificar todo. 
+    //supongo que compensa por el hecho de que tendrá que "encontrar" el barco que podría haber encontrado aquí.
+    function checkMismoBarco() {
+        for (let i = posibleCasillaID.length - 1; i >= 0; i--) {
+            if ((!(todasTusCasillas[posibleCasillaID[i]].barco === barcoTocado)) || todasTusCasillas[posibleCasillaID[i]] === 0) {
+                posibleCasillaID.splice(i, 1);
+            }
         }
-    }
-    if (haciaDonde.includes("up")){
-        if (!(todasTusCasillas[ultimoDisparoID+10]===0)){
-            posibleCasillaID.push(ultimoDisparoID+10)
-        }
-    }
-    if (haciaDonde.includes("down")){
-        if (!(todasTusCasillas[ultimoDisparoID-10]===0)){
-            posibleCasillaID.push(ultimoDisparoID-10)
-        }
-    }
-}
-        //qwerty problema cuando acierta y luego falla al buscar "aleatorio" porque en la segunda vez empieza a buscar aleatorio alrededor de una casilla que es agua. la busqueda de casillas aleatorias debe ser entorno al acierto inicial. ver ultimodisparoID
-    if (aciertos===1){
-        siguientePosible()
-        checkBordes()
-        checkMismoBarco()
-        eleccion=todasTusCasillas[randomElementArr(posibleCasillaID)]
-        ultimoDisparoID=eleccion.casillaGrafica.id 
-        posicionBarcoTocado=posicionesTusBarcos[barcoTocado]
-        if (eleccion.barco===barcoTocado){
-        posicionBarcoTocado.splice(posicionBarcoTocado.indexOf(todasTusCasillas[ultimoDisparoID].casillaGrafica),1)
-        }
-        return eleccion
-    }
-    else if (aciertos>1){
-        //siguientePosible()
-        //checkBordes()
-        eleccion=randomElementArr(posicionBarcoTocado)
-        posicionBarcoTocado.splice(posicionBarcoTocado.indexOf(eleccion),1)
-        ultimoDisparoID=eleccion.casillaGrafica.id
-        return eleccion
     }
 }
 
