@@ -20,11 +20,18 @@ body {
     background-image: url("background.jpg");
     background-color: #cccccc;
     background-size: cover;
+<<<<<<< Updated upstream
     flex-direction: row;
 }
 
 .letters {
     --d: 8vh;
+=======
+}
+
+.letters {
+    --d: 80px;
+>>>>>>> Stashed changes
     /* image size */
     --rel: 3;
     /* how much extra space we want between images, 1 = one image size */
@@ -36,9 +43,15 @@ body {
     width: var(--s);
     height: var(--s);
     padding: 0;
+<<<<<<< Updated upstream
     margin-left: 4vh;
     margin-top: 3vh;
     margin-right: 2vh;
+=======
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-right: 20px;
+>>>>>>> Stashed changes
 }
 
 .letters div {
@@ -46,7 +59,11 @@ body {
     background: #2243B6;
     color: white;
     font-weight: bold;
+<<<<<<< Updated upstream
     font-size: 5.45vh;
+=======
+    font-size: 55px;
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +81,7 @@ body {
     position: absolute;
     background: #2243B6;
     z-index: 15;
+<<<<<<< Updated upstream
     border-radius: 1.48vh;
     justify-content: center;
     align-items: center;
@@ -71,10 +89,20 @@ body {
     padding: 7vh 0;
     font-size: 1.48vh;
     width: 48.55vh;
+=======
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 15px;
+    width: 500px;
+>>>>>>> Stashed changes
     display: block;
 }
 
 #preguntando {
+<<<<<<< Updated upstream
     position: relative;
     background: #2243B6;
     z-index: 12;
@@ -89,6 +117,21 @@ body {
     display: none;
     width: 46.58vh;
     order: 1;
+=======
+    position: absolute;
+    background: #2243B6;
+    z-index: 12;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 25px;
+    margin-left: 20px;
+    left: 0;
+    display: none;
+    width: 470px;
+>>>>>>> Stashed changes
 }
 
 #inicio,
@@ -97,6 +140,7 @@ body {
 }
 
 #comencemos {
+<<<<<<< Updated upstream
     border-radius: 1.48vh;
     background: #5DADEC;
     width: 11vh;
@@ -111,6 +155,14 @@ body {
 
 #vicio {
     border-radius: 1.48vh;
+=======
+    border-radius: 15px;
+    background: #5DADEC;
+}
+
+#vicio {
+    border-radius: 15px;
+>>>>>>> Stashed changes
     background: #5DADEC;
 }
 
@@ -123,12 +175,19 @@ body {
 }
 
 #container {
+<<<<<<< Updated upstream
     width: 80%;
+=======
+    width: 100%;
+>>>>>>> Stashed changes
     height: 100vh;
     z-index: -1;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+<<<<<<< Updated upstream
     order: 2;
+=======
+>>>>>>> Stashed changes
 }
 
 #videoElement {
@@ -138,6 +197,7 @@ body {
 }
 
 #risas {
+<<<<<<< Updated upstream
     display: none;
 }
 
@@ -148,6 +208,12 @@ body {
     left: 30%;
     max-width: 30%;
     height: auto;
+=======
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    display: none;
+>>>>>>> Stashed changes
 }
 
 #musicaFondo {
@@ -156,6 +222,7 @@ body {
     right: 0;
 }
 
+<<<<<<< Updated upstream
 #info {
     display: flex;
     flex-direction: column;
@@ -182,6 +249,26 @@ body {
     border-radius: 1.48vh;
     text-align: center;
     padding: 1vh;
+=======
+#puntosContainer {
+    position: absolute;
+    right: 10px;
+    background: #2243B6;
+    border-radius: 15px;
+    text-align: center;
+    top: 100px;
+    padding: 10px;
+}
+
+#tiempoContainer {
+    position: absolute;
+    right: 10px;
+    background: #2243B6;
+    border-radius: 15px;
+    text-align: center;
+    top: 300px;
+    padding: 10px;
+>>>>>>> Stashed changes
 }
 
 #puntuaciones {
@@ -189,6 +276,7 @@ body {
     z-index: 50;
     position: absolute;
     background: #2243B6;
+<<<<<<< Updated upstream
     border-radius: 1.48vh;
     justify-content: center;
     align-items: center;
@@ -197,6 +285,16 @@ body {
     font-size: 1.48vh;
     width: 49.55vh;
     font-size: 2.97vh;
+=======
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 15px;
+    width: 500px;
+    font-size: 30px;
+>>>>>>> Stashed changes
 }
 
 .seleccionada {
@@ -207,11 +305,19 @@ body {
     0% {
         color: white;
     }
+<<<<<<< Updated upstream
 
     20% {
         color: white;
     }
 
+=======
+
+    20% {
+        color: white;
+    }
+
+>>>>>>> Stashed changes
     50% {
         color: transparent;
     }

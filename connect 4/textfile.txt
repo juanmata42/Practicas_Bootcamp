@@ -1,4 +1,5 @@
 https://connect4.gamesolver.org/en/
+<<<<<<< Updated upstream
 https://connectfour.marcomelilli.com/
 
 ojo que si el droide es el primer jugador, no se le deje al player meter ficha
@@ -95,3 +96,5 @@ cpu - cpu + nolisto gana bien
 cpu - cpu - nolisto gana equiv
 
 pone primero una pieza del jugador dos, luego espera al click y pone la de la IA, después juega normal y con cabeza
+=======
+>>>>>>> Stashed changes
