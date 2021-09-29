@@ -27,7 +27,7 @@ let barcoNum = 0
 let turn = "jugador"
 let turnoNumber = 1
 let modo = "buscando"
-let posicionesTusBarcos={50:[],40:[],31:[],32:[],21:[],22:[]}
+let posicionesTusBarcos = { 50: [], 40: [], 31: [], 32: [], 21: [], 22: [] }
 let barcosIMG = {
     5: { vk: ["longboatH.png", "longboatV.png"], G: ["trirremoH.png", "trirremoV.png"], K: ["tortugaH.png", "tortugaV.png"] },
     4: ["transporteH.png", "transporteV.png"],
@@ -626,12 +626,12 @@ function hitOrMiss(casilla, board) {
             arrayVisionIA[fila][columna].barco = board[fila][columna].barco
             board[fila][columna].tocado = 1
             let valorBarco = board[fila][columna].barco
-            barcoTocado=valorBarco
-            posicionBarcoTocado=posicionesTusBarcos[barcoTocado]
-            posicionBarcoTocado.splice(posicionBarcoTocado.indexOf(eleccionIA),1)
+            barcoTocado = valorBarco
+            posicionBarcoTocado = posicionesTusBarcos[barcoTocado]
+            posicionBarcoTocado.splice(posicionBarcoTocado.indexOf(eleccionIA), 1)
             contBarcosTocados.push(valorBarco)
             if (getOccurrence(contBarcosTocados, valorBarco) < primeraCifra(valorBarco)) {
-                ultimoDisparoID=parseInt(`${fila}${columna}`)
+                ultimoDisparoID = parseInt(`${fila}${columna}`)
                 tocadoS.play();
                 prender(casilla)
                 modo = "buscando"
@@ -641,7 +641,7 @@ function hitOrMiss(casilla, board) {
                 hundidoS.play();
                 prender(casilla)
                 aciertos++
-                primerAciertoID=-1
+                primerAciertoID = -1
                 modo = "buscando"
             }
         } else {
@@ -727,7 +727,7 @@ function gameEnd() {
     document.getElementById("ganador").innerText = texto
 }
 let ultimoDisparoID
-let indicesUsadosBuscando=[]
+let indicesUsadosBuscando = []
 //el array de indices que salta casillas una si una no. me duele la cabeza y no consigo pensar en una forma de crearlo que me lleve menos tiempo que escribirlo a mano
 let indicesUsadosBuscandoDos = [1, 3, 5, 7, 9, 10, 12, 14, 16, 18, 21, 23, 25, 27, 29, 30, 32, 34, 36, 38, 41, 43, 45, 47, 49, 50, 52, 54, 56, 58, 61, 63, 65, 67, 69, 70, 72, 74, 76, 78, 81, 83, 85, 87, 89, 90, 92, 94, 96, 98]
 //para encontrar los de 3
@@ -756,9 +756,9 @@ function IA() {
         ultimoDisparoID = eleccion.casillaGrafica.id
         return eleccion
     } else {
-            turnoNumber++
-            return buscando()
-        } 
+        turnoNumber++
+        return buscando()
+    }
 }
 let afinandoPunteria = 2
 //el array que filtra casillas 
@@ -827,12 +827,12 @@ function buscando() {
     }
 
 }
-let aciertos=0
+let aciertos = 0
 //lista de id de casillas en las que puede estar
-let posibleCasillaID=[]
+let posibleCasillaID = []
 let barcoTocado
 let posicionBarcoTocado
-let primerAciertoID=-1
+let primerAciertoID = -1
 
 
 //always music, always good
