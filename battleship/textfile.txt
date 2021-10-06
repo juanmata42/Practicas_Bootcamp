@@ -1,0 +1,21 @@
+1- dos partes con marco, mar y niebla
+2- seleccionador de civilización
+3- sprites de los barcos y el trebuchet
+4- turno de inicio aleatorio
+5- IA https://www.datagenetics.com/blog/december32011/
+
+cuando acierta, hace un array con los 4 resultados posibles. Si vuelve a acertar, hace "trampas" y crea un array con las casillas reales del barco, luego va disparando 1 a 1. Si falla, se quita la casilla del fallo del array de posibles y se sigue intentándolo
+
+mirar bien qué se está pasando como eleccion, si el objeto, la casilla o el ID. estandarizar esto
+siempre pasaremos el objeto entero
+
+6-? hacer que se pueda jugar en navegador largo y dos pantallas?
+
+
+
+
+
+https://github.com/billmei/battleboat
+
+http://www.datagenetics.com/blog/december32011/
+
